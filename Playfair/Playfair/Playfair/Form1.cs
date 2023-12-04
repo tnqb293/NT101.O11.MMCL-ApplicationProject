@@ -5,6 +5,7 @@ namespace Playfair
     public partial class Form1 : Form
     {
         private char[,] keyMatrix;
+
         public Form1()
         {
             InitializeComponent();
@@ -19,13 +20,14 @@ namespace Playfair
             btnGenerateKey.Click += btnGenerateKey_Click;
             btnEncrypt.Click += btnEncrypt_Click;
             btnDecrypt.Click += btnDecrypt_Click;
-            btnSwitch.Click += btnSwitch_Click;
+
 
             GenerateKeyMatrix();
         }
 
         private void btnGenerateKey_Click(object sender, EventArgs e)
         {
+
             GenerateKeyMatrix();
 
         }
@@ -44,12 +46,7 @@ namespace Playfair
             txtOutput.Text = decryptedText;
         }
 
-        private void btnSwitch_Click(object sender, EventArgs e)
-        {
-            string temp = txtInput.Text;
-            txtInput.Text = txtOutput.Text;
-            txtOutput.Text = temp;
-        }
+
         private void GenerateKeyMatrix()
         {
             char[] alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ".ToCharArray();
@@ -165,6 +162,31 @@ namespace Playfair
                 }
             }
             return Tuple.Create(-1, -1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string newKey = txtInputKey.Text.ToUpper();
+            SetKeyMatrix(newKey);
+        }
+        private void SetKeyMatrix(string newKey)
+        {
+
+
+            newKey = newKey.Replace("J", "I").ToUpper();
+            keyMatrix = new char[5, 5];
+
+            int index = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    keyMatrix[i, j] = newKey[index];
+                    index++;
+                }
+            }
+
+            DisplayKeyMatrix();
         }
     }
 }

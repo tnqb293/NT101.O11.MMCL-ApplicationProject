@@ -29,142 +29,148 @@
         private void InitializeComponent()
         {
             txtKeyMatrix = new RichTextBox();
-            textBox1 = new TextBox();
+            txtInputKey = new TextBox();
             btnGenerateKey = new Button();
-            txtInput = new RichTextBox();
-            txtOutput = new RichTextBox();
             btnEncrypt = new Button();
             btnDecrypt = new Button();
-            btnSwitch = new Button();
             label1 = new Label();
-            label2 = new Label();
+            txtKey = new Label();
             label3 = new Label();
             label4 = new Label();
+            txtInput = new TextBox();
+            txtOutput = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // txtKeyMatrix
             // 
-            txtKeyMatrix.Location = new Point(40, 48);
+            txtKeyMatrix.Location = new Point(29, 48);
             txtKeyMatrix.Name = "txtKeyMatrix";
             txtKeyMatrix.Size = new Size(304, 257);
             txtKeyMatrix.TabIndex = 0;
             txtKeyMatrix.Text = "";
             // 
-            // textBox1
+            // txtInputKey
             // 
-            textBox1.Location = new Point(379, 48);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(296, 27);
-            textBox1.TabIndex = 1;
+            txtInputKey.Location = new Point(379, 48);
+            txtInputKey.Name = "txtInputKey";
+            txtInputKey.Size = new Size(232, 27);
+            txtInputKey.TabIndex = 1;
             // 
             // btnGenerateKey
             // 
-            btnGenerateKey.Location = new Point(379, 89);
+            btnGenerateKey.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGenerateKey.Location = new Point(380, 144);
             btnGenerateKey.Name = "btnGenerateKey";
-            btnGenerateKey.Size = new Size(296, 29);
+            btnGenerateKey.Size = new Size(232, 29);
             btnGenerateKey.TabIndex = 2;
-            btnGenerateKey.Text = "Khóa ngẫu nhiên";
+            btnGenerateKey.Text = "Random Key";
             btnGenerateKey.UseVisualStyleBackColor = true;
             btnGenerateKey.Click += btnGenerateKey_Click;
             // 
-            // txtInput
-            // 
-            txtInput.Location = new Point(40, 371);
-            txtInput.Name = "txtInput";
-            txtInput.Size = new Size(233, 139);
-            txtInput.TabIndex = 3;
-            txtInput.Text = "";
-            // 
-            // txtOutput
-            // 
-            txtOutput.Location = new Point(442, 371);
-            txtOutput.Name = "txtOutput";
-            txtOutput.Size = new Size(233, 139);
-            txtOutput.TabIndex = 4;
-            txtOutput.Text = "";
-            // 
             // btnEncrypt
             // 
-            btnEncrypt.Location = new Point(315, 371);
+            btnEncrypt.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEncrypt.Location = new Point(463, 347);
             btnEncrypt.Name = "btnEncrypt";
-            btnEncrypt.Size = new Size(94, 29);
+            btnEncrypt.Size = new Size(128, 27);
             btnEncrypt.TabIndex = 5;
-            btnEncrypt.Text = "Mã hóa";
+            btnEncrypt.Text = "Encrpyt";
             btnEncrypt.UseVisualStyleBackColor = true;
             btnEncrypt.Click += btnEncrypt_Click;
             // 
             // btnDecrypt
             // 
-            btnDecrypt.Location = new Point(315, 429);
+            btnDecrypt.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDecrypt.Location = new Point(463, 411);
             btnDecrypt.Name = "btnDecrypt";
-            btnDecrypt.Size = new Size(94, 29);
+            btnDecrypt.Size = new Size(128, 27);
             btnDecrypt.TabIndex = 6;
-            btnDecrypt.Text = "Giải mã";
+            btnDecrypt.Text = "Decrypt";
             btnDecrypt.UseVisualStyleBackColor = true;
             btnDecrypt.Click += btnDecrypt_Click;
-            // 
-            // btnSwitch
-            // 
-            btnSwitch.Location = new Point(315, 481);
-            btnSwitch.Name = "btnSwitch";
-            btnSwitch.Size = new Size(94, 29);
-            btnSwitch.TabIndex = 7;
-            btnSwitch.Text = "<<";
-            btnSwitch.UseVisualStyleBackColor = true;
-            btnSwitch.Click += btnSwitch_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 18);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(29, 18);
             label1.Name = "label1";
-            label1.Size = new Size(43, 20);
+            label1.Size = new Size(85, 20);
             label1.TabIndex = 8;
-            label1.Text = "Khóa";
+            label1.Text = "Key Matrix";
             // 
-            // label2
+            // txtKey
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(383, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 20);
-            label2.TabIndex = 9;
-            label2.Text = "Nhập ma trận";
+            txtKey.AutoSize = true;
+            txtKey.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtKey.Location = new Point(379, 18);
+            txtKey.Name = "txtKey";
+            txtKey.Size = new Size(39, 20);
+            txtKey.TabIndex = 9;
+            txtKey.Text = "Key:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(42, 340);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(29, 324);
             label3.Name = "label3";
-            label3.Size = new Size(122, 20);
+            label3.Size = new Size(51, 20);
             label3.TabIndex = 10;
-            label3.Text = "Văn bản đầu vào:";
+            label3.Text = "Input:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(442, 340);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(29, 388);
             label4.Name = "label4";
-            label4.Size = new Size(111, 20);
+            label4.Size = new Size(63, 20);
             label4.TabIndex = 11;
-            label4.Text = "Văn bản đầu ra:";
+            label4.Text = "Output:";
+            // 
+            // txtInput
+            // 
+            txtInput.Location = new Point(29, 347);
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(368, 27);
+            txtInput.TabIndex = 12;
+            // 
+            // txtOutput
+            // 
+            txtOutput.Location = new Point(29, 411);
+            txtOutput.Name = "txtOutput";
+            txtOutput.Size = new Size(368, 27);
+            txtOutput.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(379, 98);
+            button1.Name = "button1";
+            button1.Size = new Size(233, 29);
+            button1.TabIndex = 14;
+            button1.Text = "Generate Key";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(708, 545);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(btnSwitch);
-            Controls.Add(btnDecrypt);
-            Controls.Add(btnEncrypt);
+            ClientSize = new Size(624, 462);
+            Controls.Add(button1);
             Controls.Add(txtOutput);
             Controls.Add(txtInput);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(txtKey);
+            Controls.Add(label1);
+            Controls.Add(btnDecrypt);
+            Controls.Add(btnEncrypt);
             Controls.Add(btnGenerateKey);
-            Controls.Add(textBox1);
+            Controls.Add(txtInputKey);
             Controls.Add(txtKeyMatrix);
             Name = "Form1";
             Text = "Form1";
@@ -176,16 +182,16 @@
         #endregion
 
         private RichTextBox txtKeyMatrix;
-        private TextBox textBox1;
+        private TextBox txtInputKey;
         private Button btnGenerateKey;
-        private RichTextBox txtInput;
-        private RichTextBox txtOutput;
         private Button btnEncrypt;
         private Button btnDecrypt;
-        private Button btnSwitch;
         private Label label1;
-        private Label label2;
+        private Label txtKey;
         private Label label3;
         private Label label4;
+        private TextBox txtInput;
+        private TextBox txtOutput;
+        private Button button1;
     }
 }
