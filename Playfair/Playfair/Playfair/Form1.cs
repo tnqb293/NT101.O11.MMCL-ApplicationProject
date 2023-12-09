@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 
 namespace Playfair
 {
@@ -87,7 +87,7 @@ namespace Playfair
         private string PlayfairEncrypt(string input)
         {
             StringBuilder encryptedText = new StringBuilder();
-            input = input.Replace("J", "I");
+            input = input.Replace("J", "I").Replace(" ", ""); // Loại bỏ khoảng trắng
 
             for (int k = 0; k < input.Length; k += 2)
             {
@@ -112,14 +112,18 @@ namespace Playfair
                     encryptedText.Append(keyMatrix[pos1.Item1, pos2.Item2]);
                     encryptedText.Append(keyMatrix[pos2.Item1, pos1.Item2]);
                 }
+
+                // Insert a space between pairs
+                encryptedText.Append(" ");
             }
 
-            return encryptedText.ToString();
+            return encryptedText.ToString().Trim();
         }
 
         private string PlayfairDecrypt(string input)
         {
             StringBuilder decryptedText = new StringBuilder();
+            input = input.Replace(" ", ""); // Loại bỏ khoảng trắng
 
             for (int k = 0; k < input.Length; k += 2)
             {
@@ -144,9 +148,12 @@ namespace Playfair
                     decryptedText.Append(keyMatrix[pos1.Item1, pos2.Item2]);
                     decryptedText.Append(keyMatrix[pos2.Item1, pos1.Item2]);
                 }
+
+                // Insert a space between pairs
+                decryptedText.Append(" ");
             }
 
-            return decryptedText.ToString();
+            return decryptedText.ToString().Trim();
         }
 
         private Tuple<int, int> FindPosition(char target)
