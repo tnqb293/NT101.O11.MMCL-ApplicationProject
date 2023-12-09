@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Playfair
-build_property.ProjectDir = D:\NT101.O11.MMCL-ApplicationProject\Playfair\Playfair\Playfair\
+build_property.ProjectDir = D:\Study\Network Sercurity\DoAn\NT101.O11.MMCL-ApplicationProject\Playfair\Playfair\NT101.O11.MMCL-ApplicationProject\Playfair\Playfair\Playfair\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
