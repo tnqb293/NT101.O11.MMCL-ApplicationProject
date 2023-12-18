@@ -41,6 +41,15 @@ namespace RSA
             this.tb_private = new System.Windows.Forms.TextBox();
             this.btn_en = new System.Windows.Forms.Button();
             this.btn_de = new System.Windows.Forms.Button();
+            this.pNum = new System.Windows.Forms.TextBox();
+            this.qNum = new System.Windows.Forms.TextBox();
+            this.nNum = new System.Windows.Forms.TextBox();
+            this.phiNum = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtb_plain
@@ -50,7 +59,7 @@ namespace RSA
             this.rtb_plain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtb_plain.Size = new System.Drawing.Size(400, 200);
             this.rtb_plain.TabIndex = 0;
-            this.rtb_plain.Text = "";
+            this.rtb_plain.Text = "HELLO";
             // 
             // rtb_cipher
             // 
@@ -64,17 +73,15 @@ namespace RSA
             // 
             // tb_public
             // 
-            this.tb_public.Location = new System.Drawing.Point(448, 139);
-            this.tb_public.Multiline = true;
+            this.tb_public.Location = new System.Drawing.Point(448, 149);
             this.tb_public.Name = "tb_public";
-            this.tb_public.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tb_public.Size = new System.Drawing.Size(160, 34);
+            this.tb_public.Size = new System.Drawing.Size(160, 22);
             this.tb_public.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(448, 119);
+            this.label1.Location = new System.Drawing.Point(448, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 3;
@@ -101,7 +108,7 @@ namespace RSA
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(448, 175);
+            this.label4.Location = new System.Drawing.Point(448, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 7;
@@ -109,10 +116,9 @@ namespace RSA
             // 
             // tb_private
             // 
-            this.tb_private.Location = new System.Drawing.Point(448, 195);
-            this.tb_private.Multiline = true;
+            this.tb_private.Location = new System.Drawing.Point(448, 205);
             this.tb_private.Name = "tb_private";
-            this.tb_private.Size = new System.Drawing.Size(160, 34);
+            this.tb_private.Size = new System.Drawing.Size(160, 22);
             this.tb_private.TabIndex = 6;
             // 
             // btn_en
@@ -133,12 +139,104 @@ namespace RSA
             this.btn_de.TabIndex = 9;
             this.btn_de.Text = "Decrypt";
             this.btn_de.UseVisualStyleBackColor = true;
+            this.btn_de.Click += new System.EventHandler(this.btn_de_Click);
+            // 
+            // pNum
+            // 
+            this.pNum.Location = new System.Drawing.Point(448, 52);
+            this.pNum.Name = "pNum";
+            this.pNum.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.pNum.Size = new System.Drawing.Size(78, 22);
+            this.pNum.TabIndex = 10;
+            // 
+            // qNum
+            // 
+            this.qNum.Location = new System.Drawing.Point(532, 52);
+            this.qNum.Name = "qNum";
+            this.qNum.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.qNum.Size = new System.Drawing.Size(78, 22);
+            this.qNum.TabIndex = 12;
+            // 
+            // nNum
+            // 
+            this.nNum.Location = new System.Drawing.Point(616, 52);
+            this.nNum.Name = "nNum";
+            this.nNum.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.nNum.Size = new System.Drawing.Size(78, 22);
+            this.nNum.TabIndex = 14;
+            // 
+            // phiNum
+            // 
+            this.phiNum.Location = new System.Drawing.Point(700, 52);
+            this.phiNum.Name = "phiNum";
+            this.phiNum.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.phiNum.Size = new System.Drawing.Size(78, 22);
+            this.phiNum.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(448, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 17);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "p";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(532, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "q";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(616, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "n";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(700, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(27, 17);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "phi";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(448, 80);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(330, 40);
+            this.btn_reset.TabIndex = 21;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // RSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.phiNum);
+            this.Controls.Add(this.nNum);
+            this.Controls.Add(this.qNum);
+            this.Controls.Add(this.pNum);
             this.Controls.Add(this.btn_de);
             this.Controls.Add(this.btn_en);
             this.Controls.Add(this.label4);
@@ -157,6 +255,26 @@ namespace RSA
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_reset;
+
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+
+        private System.Windows.Forms.Label label5;
+
+        private System.Windows.Forms.TextBox phiNum;
+        private System.Windows.Forms.TextBox textBox4;
+
+        private System.Windows.Forms.TextBox nNum;
+        private System.Windows.Forms.TextBox textBox3;
+
+        private System.Windows.Forms.TextBox qNum;
+        private System.Windows.Forms.TextBox textBox2;
+
+        private System.Windows.Forms.TextBox pNum;
+        private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.Button btn_de;
 
